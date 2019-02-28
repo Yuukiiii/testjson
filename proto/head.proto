@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message Head {
+       string  msg_type_name = 1;
+       int32   ret = 2;
+       string  key = 3;
+}
+
+enum FieldType {
+    UID = 0;
+    DEVICEID = 1;
+}
+
+enum PushType {
+    PUSH_TYPE_DUFAULT = 0;
+    PUSH_TYPE_NETID   = 1;
+}

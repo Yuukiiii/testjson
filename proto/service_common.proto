@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package service_common;
+
+import "head.proto";
+
+message SetLogLevelReq {
+   required	 uint32   level  = 1; 
+}
+
+message SetLogLevelAck{
+}
+
+message ServerStateCheckReq {
+}
+
+message ServerStateCheckAck {
+   required   string   err = 1;
+}
+
+message KeepAliveReq{
+}
+
+message KeepAliveAck{
+}

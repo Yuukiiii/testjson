@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package service_push;
+
+import "head.proto";
+
+
+message ServiceToPushReq {
+   optional   string   user_id      = 1;
+   required   string   data         = 2;
+   optional   string   device_id    = 3;
+   optional   string   app_version  = 4;
+   optional   FieldType field_type  = 5[default=UID];
+   optional   PushType push_type    = 6[default=PUSH_TYPE_DUFAULT];
+   optional   uint32  tcpd_id       = 7;
+   optional   uint32  user_netid    = 8;
+}
+
+message ServiceToPushAck {
+   optional   string   user_id  = 1;
+   optional   string   err = 2;
+   optional   FieldType field_type = 3;
+   optional   string  device_id  = 4;
+}
+
+message BroadcastToPushReq {
+   repeated   string   user_id  = 1;
+   required   string   data     = 2;
+}
+
+message BroadcastToPushAck {   
+   required   string   err = 1;
+}
