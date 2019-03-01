@@ -3,13 +3,11 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	tcpServer "common/tcp/tcp_server"
-)
-
-var (
-	nsqTcpServer        *tcpServer.Server
+	"github.com/golang/protobuf/proto"
+	"protobuf/head"
 
 )
+
 
 func main()  {
 	tcpd := Tcpd_Rest{
