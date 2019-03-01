@@ -1,33 +1,18 @@
 package main
 
 import (
-	"encoding/json"
+	"./proto"
 	"fmt"
 	"github.com/golang/protobuf/proto"
-	"protobuf/head"
-
 )
 
-
 func main()  {
-	tcpd := Tcpd_Rest{
-		Url:	"test",
-		Id:		"1",
+	h1 := &head.Head{
+		MsgTypeName:string("test"),
+		Ret:int32(1),
+		Key:string("key"),
 	}
+	proto.Marshal(h1)
+	fmt.Println(h1.String())
 
-	str, err := json.Marshal(tcpd)
-	if (err != nil) {
-		fmt.Println(err)
-	} else {
-		fmt.Println(string(str))
-	}
-
-	tcpd2 := Tcpd_Rest{}
-	err2 := json.Unmarshal([]byte(string(str)), &tcpd2)
-
-	if (err2 != nil) {
-		fmt.Println(err2)
-	} else {
-		fmt.Println(tcpd2.Url)
-	}
 }
