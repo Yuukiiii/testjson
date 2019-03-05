@@ -2,8 +2,6 @@ syntax = "proto3";
 
 package control_exchange;
 
-import "head.proto";
-
 message DeleteConnectorReq {
    string server_name = 1;//only support restAgent or status
    string server_ip = 2;
