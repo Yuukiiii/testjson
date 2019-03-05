@@ -43,8 +43,8 @@ message QueryUserExchangeInfoReq {
     message stUserData
     {
         required  string user_id = 1;
-        optional  uint32 netid   = 2;
-        optional  uint32 tcpd_id = 3;
+        uint32 netid   = 2;
+        uint32 tcpd_id = 3;
     }
     repeated   string     user_id    = 1;
     repeated   stUserData userdata   = 2;
@@ -53,15 +53,15 @@ message QueryUserExchangeInfoReq {
 message QueryUserExchangeInfoAck {
     message stUserExchangeInfo
     {
-        required   string   user_id      = 1;
-        optional   uint32   platform_id  = 2;
-        optional   uint32   product_id   = 3;
-        optional   uint32   protocol_id  = 4;
-        optional   string   device_id    = 5;
-        optional   string   client_app   = 6;
-        optional   string   app_version  = 7;
-        optional   string   language     = 8;
-        optional   string   country      = 9;
+        string   user_id      = 1;
+        uint32   platform_id  = 2;
+        uint32   product_id   = 3;
+        uint32   protocol_id  = 4;
+        string   device_id    = 5;
+        string   client_app   = 6;
+        string   app_version  = 7;
+        string   language     = 8;
+        string   country      = 9;
     }
 
     repeated   stUserExchangeInfo user_infos = 1;

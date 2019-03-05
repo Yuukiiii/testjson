@@ -2,8 +2,6 @@ syntax = "proto3";
 
 package service_common;
 
-import "head.proto";
-
 message SetLogLevelReq {
  	uint32   level  = 1;
 }
