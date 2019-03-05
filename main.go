@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./proto"
+	"baseservice/testjson/proto"
 	"fmt"
 	"github.com/golang/protobuf/proto"
 )

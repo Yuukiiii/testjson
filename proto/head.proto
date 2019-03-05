@@ -1,9 +1,9 @@
-syntax = "proto3";
+syntax "proto3";
 
 message Head {
-       string  msg_type_name = 1;
-       int32   ret = 2;
-       string  key = 3;
+    string  msg_type_name = 1;
+    int32   ret = 2;
+    string  key = 3;
 }
 
 enum FieldType {

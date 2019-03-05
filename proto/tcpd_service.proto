@@ -1,0 +1,44 @@
+syntax "proto3";
+
+package tcpd_service;
+
+import "head.proto";
+
+message ServiceReq {
+    uint32  requestid   = 1;
+    string  user_id     = 2;
+    uint32  user_netid  = 3;
+    string  data        = 4;
+    FieldType field_type = 5;
+    string  device_id   = 6;
+    uint32  tcpd_id     = 7;
+    uint32  protocol_id = 8;
+    string  client_app  = 9;
+    string  app_version = 10;
+    string  language    = 11;
+    string  country     = 12;
+    uint32  client_ip   = 13;
+    uint32  platform_id = 14;
+    uint32  product_id  = 15;
+}
+
+message ServiceAck {
+    uint32  requestid  = 1;
+    string  user_id    = 2;
+    uint32  user_netid = 3;
+    string  data       = 4;
+}
+
+message ServiceMultiAck {
+    uint32  requestid  = 1;
+    string  user_id    = 2;
+    uint32  user_netid = 3;
+    string  data       = 4;
+}
+
+message SynLogout {
+    string  user_id     = 1;
+    string  device_id   = 2;
+    string  app_version = 3;
+    uint32  protocol_id = 4;
+}
