@@ -1,22 +1,19 @@
 package main
 
 import (
-	"baseservice/testjson/proto/head"
+	"common/util"
 	"fmt"
-	"github.com/golang/protobuf/proto"
 )
 
-func test(msg proto.Message) {
-	fmt.Println((msg).String())
-}
 
 func main() {
-	h1 := &head.Head{
-		MsgTypeName: string("test"),
-		Ret:         int32(1),
-		Key:         string("key"),
+	var gcf Config
+	if err := util.ParseConf(&gcf, "etc/country_code.yaml"); err != nil {
+		return
 	}
-	proto.Marshal(h1)
-	fmt.Println(h1)
-	test(h1)
+
+	var c = gcf.Country
+	fmt.Println(c["日本"])
+	fmt.Println(c["美国"])
+
 }
