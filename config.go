@@ -1,6 +1,6 @@
 package main
 
 type Config struct {
-	Country map[string]string `yaml:"bind"`
+	Country map[string]string `yaml:"country"`
 
 }
